@@ -61,8 +61,24 @@ const Weather = () => {
 
   useEffect(() => {
     search("Bengaluru");
+
+    const handleKeyDown = (event) => {
+      if(event.key === 'Enter'){
+        search(inputRef.current.value);
+      }
+     };
+     
+     const inputElement = inputRef.current;
+     inputElement.addEventListener('keydown', handleKeyDown);
+
+     return () => {
+      inputElement.removeEventListener('keydown', handleKeyDown);
+     };
   }, []);
 
+  
+
+   
   return (
     <div className='weather'>
       <div className='search-bar'>

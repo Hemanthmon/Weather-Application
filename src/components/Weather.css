@@ -2,11 +2,19 @@
     place-self: center;
     padding: 40px;   /* will have space inside the box */
     border-radius: 10px;
-    background-image: linear-gradient(45deg, #2f4680, #500ae4);
+    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;  
 }
+.weather:hover {
+    transform: scale(1.05); 
+}
+
 .search-bar{
     display: flex;
     align-items: center;
@@ -21,17 +29,30 @@
     color: #626262;
     background: #ebfffc;
     font-size: 18px;
+    transition: box-shadow 0.3s ease;
 }
+.search-bar input:focus {
+    box-shadow: 0 0 10px rgba(102, 166, 255, 0.7);  /* Glow effect on focus */
+}
+
 .search-bar img{
     width: 50px;
     padding: 15px;
     border-radius : 50%;
     background: #ebfffc;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.search-bar img:hover {
+    transform: scale(1.1);  /* Slight zoom on hover */
 }
 .weather-icon{
     width: 150px;
     margin: 30px 0;
+    transition: transform 0.3s ease;
+}
+.weather-icon:hover {
+    transform: rotate(10deg);  /* A playful tilt on hover */
 }
 .temperature{
     color: #fff;
